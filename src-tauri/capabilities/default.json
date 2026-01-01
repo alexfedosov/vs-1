@@ -1,0 +1,38 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "dialog:default",
+    "fs:default",
+    {
+      "identifier": "fs:allow-read-file",
+      "allow": [
+        { "path": "$HOME/**" },
+        { "path": "$AUDIO/**" },
+        { "path": "$DOCUMENT/**" },
+        { "path": "$DOWNLOAD/**" }
+      ]
+    },
+    {
+      "identifier": "fs:allow-write-file",
+      "allow": [
+        { "path": "$HOME/**" },
+        { "path": "$DOCUMENT/**" },
+        { "path": "$DOWNLOAD/**" }
+      ]
+    },
+    {
+      "identifier": "fs:scope",
+      "allow": [
+        "$HOME/**",
+        "$AUDIO/**",
+        "$DOCUMENT/**",
+        "$DOWNLOAD/**"
+      ]
+    }
+  ]
+}
